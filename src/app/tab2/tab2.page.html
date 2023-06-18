@@ -12,6 +12,23 @@
       <ion-title size="large">Tab 2</ion-title>
     </ion-toolbar>
   </ion-header>
-
+<ion-searchbar placeholder="Buscar"  (ionChange)="buscar($event)"></ion-searchbar>
   <app-explore-container name="Tab 2 page"></app-explore-container>
+  <swiper-container [slidesPerView]="4.2" >
+    <swiper-slide>
+
+  <ion-card color="" *ngFor="let comida of arregloComida">
+
+    <ion-card-header >
+      <ion-card-title >{{comida.strMeal}}</ion-card-title>
+
+      <ion-thumbnail>
+        <img src="" />
+      </ion-thumbnail>
+
+
+    </ion-card-header>
+  </ion-card>
+  </swiper-slide>
+  </swiper-container>
 </ion-content>

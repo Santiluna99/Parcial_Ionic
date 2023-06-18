@@ -1,17 +1,54 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Comidas
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<swiper-container [slidesPerView]="4.2" >
+  <swiper-slide *ngFor="let comida of arregloComida" >
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+<ion-card color="warning" [routerLink]="['/tabs/tab1/detalle', comida.idMeal]">
+
+  <ion-card-header >
+    <ion-card-title >{{comida.strMeal}}</ion-card-title>
+
+    <ion-thumbnail>
+      <img src="{{comida.strMealThumb}}" />
+    </ion-thumbnail>
+
+
+  </ion-card-header>
+</ion-card>
+</swiper-slide>
+</swiper-container>
+<a (click)="Filtro('a')" [routerLink]="['/tabs/tab1/']" >a - </a>
+
+<a (click)="Filtro('b')" [routerLink]="['/tabs/tab1/']" >b - </a>
+
+<a (click)="Filtro('c')"[routerLink]="['/tabs/tab1/']" >c - </a>
+
+<a (click)="Filtro('d')"[routerLink]="['/tabs/tab1/']" >d - </a>
+
+<a (click)="Filtro('e')"[routerLink]="['/tabs/tab1/']" >e - </a>
+
+<a (click)="Filtro('f')"[routerLink]="['/tabs/tab1/']" >f - </a>
+
+<a (click)="Filtro('g')"[routerLink]="['/tabs/tab1/']" >g - </a>
+
+<a (click)="Filtro('h')"[routerLink]="['/tabs/tab1/']" >h - </a>
+
+<a (click)="Filtro('i')"[routerLink]="['/tabs/tab1/']" >i - </a>
+
+<a (click)="Filtro('j')"[routerLink]="['/tabs/tab1/']" >j - </a>
+
+<a (click)="Filtro('k')"[routerLink]="['/tabs/tab1/']" >k - </a>
+
+<a (click)="Filtro('l')"[routerLink]="['/tabs/tab1/']" >l -</a>
+
+<a (click)="Filtro('m')"[routerLink]="['/tabs/tab1/']" >m -</a>
+
+
 </ion-content>
