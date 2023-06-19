@@ -11,7 +11,7 @@
   <ion-card color="warning"  >
   <ion-card-header >
     <ion-card-title >{{comida.strMeal}}</ion-card-title>
-    <ion-thumbnail (click)="verInfoComida(comida.idMeal)"[routerLink]="['/tabs/tab1/detalle', comida.idMeal]">
+    <ion-thumbnail (click)="verInfoComida(comida.idMeal,comida.strMeal,comida.strInstructions)"[routerLink]="['/tabs/tab1/detalle', comida.idMeal]">
       <img src="{{comida.strMealThumb}}" />
     </ion-thumbnail>
   </ion-card-header>

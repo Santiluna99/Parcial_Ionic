@@ -11,6 +11,7 @@ register();
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page implements OnInit{
+  arregloID: any;
   arregloComida:Comida[]=[];
   arregloLetra=['a','b','c','d','e','f','g','h','i','j','k','l','m',
   'n','ñ','o','p','q','r','s','t','u','v','w','x','y','z'];
@@ -37,33 +38,15 @@ this.comidasServices.getFiltro(letter).subscribe((respuesta:any)=>{
 })
 
 }
-async verInfoComida(idMeal: string) {
+async verInfoComida(idMeal: string,strMeal:string,strInstructions:string) {
+
   this.comidasServices.getInfoComida(idMeal).subscribe(async respuestaApi =>{
     console.log(respuestaApi)
-    console.log('entrando a la infopeli')
     const alert = await this.alertController.create({
-      header: respuestaApi.idMeal,
-      subHeader: respuestaApi.strMeal,
-      message: respuestaApi.strYoutube,
-
+      header: strMeal,
+      message: strInstructions,
     });
     await alert.present();
   })
 }
 }
-
-
-
-
-//  verInfoComida(idMeal:string){
-//  this.comidasServices.getInfoComida(idMeal).subscribe(async respuesta=>{
-//    console.log(respuesta)
-//     const alert = await this.alertController.create({
-//       header: 'funcionaa '+respuesta.idMeal,
-//       subHeader: (respuesta.strArea),
-//       message: respuesta.strCategory,
-
-//     });
-//     await alert.present();
-//  })
-//  }

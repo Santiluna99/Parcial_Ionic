@@ -7,7 +7,8 @@ const routes: Routes = [
   {
     path: ':idMeal',
     component: DetallePage
-  }
+  },
+
 ];
 
 @NgModule({

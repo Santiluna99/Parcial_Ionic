@@ -10,15 +10,18 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
-  // {
-  //   path: 'info-comida',
-  //   loadChildren: () => import('./pages/info-comida/info-comida.module').then( m => m.InfoComidaPageModule)
-  // },
+
   {path:'Tab1Page',component:Tab1Page
 },
-// {
-//   path:'detalle :idMeal', component:DetallePage
-// }
+ {
+   path:'detalle :idMeal', component:DetallePage
+ },
+ {
+  path:"**",
+  redirectTo:'tabs/tab1'
+
+ },
+
 ];
 @NgModule({
   imports: [

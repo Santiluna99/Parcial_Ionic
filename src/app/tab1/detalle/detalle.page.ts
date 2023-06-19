@@ -18,7 +18,10 @@ export class DetallePage implements OnInit {
 
 ngOnInit() {
        }
-constructor() {}
+constructor(private comidasServices:ComidasService,
+  private route: ActivatedRoute,
+  private alertController: AlertController) {}
+
 
 
 

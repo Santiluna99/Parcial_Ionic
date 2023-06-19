@@ -19,7 +19,7 @@ this.comidasServices.getBusqueda(strMeal.detail.value).subscribe(respuesta=>{
   this.arregloComida = respuesta.meals;
   this.route.paramMap.subscribe(params => {
     const mostrar = params.get('mostrar');
-    console.log(mostrar); // Imprime el valor del parámetro "id" en la consola
+    console.log(mostrar);
 
     });
 })

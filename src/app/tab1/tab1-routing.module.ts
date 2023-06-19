@@ -10,7 +10,12 @@ const routes: Routes = [
   {
     path: ':idMeal',
     loadChildren: () => import('./detalle/detalle.module').then( m => m.DetallePageModule)
-  }
+  },
+  {
+    path:"**",
+    redirectTo:'tabs/tab1'
+
+   }
 ];
 
 @NgModule({
