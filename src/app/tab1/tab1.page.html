@@ -1,17 +1,27 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Comidas
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<swiper-container [slidesPerView]="4.2" >
+  <swiper-slide *ngFor="let comida of arregloComida" >
+  <ion-card color="warning"  >
+  <ion-card-header >
+    <ion-card-title >{{comida.strMeal}}</ion-card-title>
+    <ion-thumbnail (click)="verInfoComida(comida.idMeal)"[routerLink]="['/tabs/tab1/detalle', comida.idMeal]">
+      <img src="{{comida.strMealThumb}}" />
+    </ion-thumbnail>
+  </ion-card-header>
+</ion-card>
+</swiper-slide>
+</swiper-container>
+<ion-label>Filtros por letra</ion-label>
+<br>
+<ion-label *ngFor="let letra of arregloLetra">
+<a (click)="Filtro(letra)" [routerLink]="['/tabs/tab1/']" >{{letra}}</a>
+</ion-label>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
 </ion-content>
