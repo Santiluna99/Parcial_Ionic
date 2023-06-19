@@ -14,18 +14,9 @@ register();
 export class Tab2Page {
 
 buscar(strMeal:any){
-//   this.comidasServices.getBusqueda(strMeal.detail.value).subscribe(respuesta=>{
-//      console.log(respuesta)   //aca se muestra el resultado entregado
-//      this.arregloComida = respuesta;
-//      console.log("funciona la busqueda")
-// ////
-
-//   })
-//   console.log("funcionaa")
-//   console.log(strMeal.detail.value)   //aca se muestra lo que se busco
 this.comidasServices.getBusqueda(strMeal.detail.value).subscribe(respuesta=>{
   console.log(respuesta)
-  this.arregloComida = respuesta;
+  this.arregloComida = respuesta.meals;
   this.route.paramMap.subscribe(params => {
     const mostrar = params.get('mostrar');
     console.log(mostrar); // Imprime el valor del parámetro "id" en la consola

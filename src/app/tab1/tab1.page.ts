@@ -4,8 +4,6 @@ import { Comida } from '../interfaces/intefaces';
 import { register } from 'swiper/element/bundle';
 import { ActivatedRoute } from '@angular/router';
 import { AlertController} from '@ionic/angular';
-
-
 register();
 @Component({
   selector: 'app-tab1',
@@ -13,24 +11,15 @@ register();
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page implements OnInit{
-// verInfoComida(idMeal:string){
-// this.comidasServices.getInfoComida(idMeal).subscribe(async respuesta=>{
-//   console.log(respuesta)
-//   const alert = await this.alertController.create({
-//     header: 'funcionaa '+respuesta.idMeal,
-//     subHeader: (respuesta.strArea),
-//     message: respuesta.strCategory,
-
-//   });
-//   await alert.present();
-// })
-// }
-
   arregloComida:Comida[]=[];
-  constructor(private comidasServices:ComidasService,private route: ActivatedRoute,private alertController: AlertController) {
+  arregloLetra=['a','b','c','d','e','f','g','h','i','j','k','l','m',
+  'n','ñ','o','p','q','r','s','t','u','v','w','x','y','z'];
+  constructor(private comidasServices:ComidasService,
+    private route: ActivatedRoute,
+    private alertController: AlertController) {
 
   }
-  ngOnInit() {
+  async ngOnInit() {
     this.comidasServices.getComida().subscribe(respuesta=>{
       console.log(respuesta)
       this.arregloComida=respuesta.meals
@@ -48,5 +37,33 @@ this.comidasServices.getFiltro(letter).subscribe((respuesta:any)=>{
 })
 
 }
+async verInfoComida(idMeal: string) {
+  this.comidasServices.getInfoComida(idMeal).subscribe(async respuestaApi =>{
+    console.log(respuestaApi)
+    console.log('entrando a la infopeli')
+    const alert = await this.alertController.create({
+      header: respuestaApi.idMeal,
+      subHeader: respuestaApi.strMeal,
+      message: respuestaApi.strYoutube,
+
+    });
+    await alert.present();
+  })
+}
 }
 
+
+
+
+//  verInfoComida(idMeal:string){
+//  this.comidasServices.getInfoComida(idMeal).subscribe(async respuesta=>{
+//    console.log(respuesta)
+//     const alert = await this.alertController.create({
+//       header: 'funcionaa '+respuesta.idMeal,
+//       subHeader: (respuesta.strArea),
+//       message: respuesta.strCategory,
+
+//     });
+//     await alert.present();
+//  })
+//  }

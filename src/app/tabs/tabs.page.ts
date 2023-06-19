@@ -12,7 +12,7 @@ export class TabsPage {
     //   method: 'GET',
     //   headers: {
     //     accept: 'application/json',
-    //    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxZjNkZjJiYTk4MWNkNTY0NzY4MzVjMWRjMzAwNGIwZSIsInN1YiI6IjY0N2U1NjM1MGZiMzk4MDBjMTI5NGVhMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.IivX_1-DxCeWEE9kfUkxzMM-kQPpU62k7ureLEKUIoI'
+    //
     //   }
     // };
 
