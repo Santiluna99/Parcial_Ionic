@@ -10,10 +10,10 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
-  {
-    path: 'info-comida',
-    loadChildren: () => import('./pages/info-comida/info-comida.module').then( m => m.InfoComidaPageModule)
-  },
+  // {
+  //   path: 'info-comida',
+  //   loadChildren: () => import('./pages/info-comida/info-comida.module').then( m => m.InfoComidaPageModule)
+  // },
   {path:'Tab1Page',component:Tab1Page
 },
 // {
